@@ -27,16 +27,16 @@ while not rr.is_race_over(bots) and num_of_turns < max_turns:
 num_of_moves = Counter(move[0] for move in robot_moves)
 
 # Count the number of collisions by robot name
-num_of_collisions = Counter(move[0] for move in robot_moves if move[2])
+num_of_collisions = Counter(move[0] for move in robot_moves if move[2]==True)
 
 # Create a namedtuple to keep track of our robots' points
-# Add your code below!
-
+BotScoreData = namedtuple("BotScoreData", ["name", "num_moves", "num_collisions", "score"])
 
 # Calculate the scores (moves + collisions) for each robot and append it to bot_scores
 bot_scores = []
-# Add your code below!
-
+for bot in bots:
+  bot_scores.append(BotScoreData(bot.name, num_of_moves, num_of_collisions, num_of_moves + num_of_collisions))
+print(bot_scores)
 
 # Populate a dict to keep track of the robot movements
 bot_data = {}
