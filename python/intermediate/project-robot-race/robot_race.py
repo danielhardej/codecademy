@@ -36,23 +36,22 @@ BotScoreData = namedtuple("BotScoreData", ["name", "num_moves", "num_collisions"
 bot_scores = []
 for bot in bots:
   bot_scores.append(BotScoreData(bot.name, num_of_moves, num_of_collisions, num_of_moves + num_of_collisions))
-print(bot_scores)
+# print(bot_scores)
 
 # Populate a dict to keep track of the robot movements
 bot_data = {}
-# Add your code below!
-
+for bot in bots:
+  bot_data.update({bot.name: bot})
 
 # Move the robots and update the map based on the moves deque
 while len(robot_moves) > 0:
-  # Make sure to pop moves from the front of the deque
-  # Add your code below!
-
-
+  # pop moves from the front of the deque
+  bot_name, direction, has_collided = robot_moves.popleft()
+  bot_data[bot_name].process_move(direction)
   # Update the maze characters based on the robot positions and print it to the console
   rr.update_maze_characters(maze_data, bots)
   rr.print_maze(maze_data)
   sleep(seconds_between_turns - time() % seconds_between_turns)
 
 # Print out the results!
-#rr.print_results(bot_scores)
+rr.print_results(bot_scores)
