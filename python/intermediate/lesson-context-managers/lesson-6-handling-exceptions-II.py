@@ -13,7 +13,10 @@ class PoemFiles:
   def __exit__(self, exc_type, exc_value, traceback):
     print(exc_type, exc_value, traceback, '\n')
     # Write your code below:
-
+    if isinstance(exc_value, AttributeError):
+      self.opened_poem_file.close()
+      print("The exception has been handled")
+      return True
 
 with PoemFiles('poem.txt', 'r') as file:
   print("---- Exception data below ---- \n ")
