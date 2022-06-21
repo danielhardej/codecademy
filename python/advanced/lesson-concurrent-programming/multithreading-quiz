@@ -1,0 +1,56 @@
+What is a downside of multithreading?
+
+  Multithreading can create more complex code due to having to manage shared resources and the nondeterminism brought about by synchronizing many concurrent threads.
+  Managing multiple threads requires more advanced coding practices and testing.
+
+What is the parent-child relationship between processes?
+
+  When a process launches another process, the original process enters a parent-child relationship with the new process. This relationship facilitates the sharing of common data and signals along the hierarchy as well as the arrangement of which process may terminate first.
+  The parent-child relationship describes the hierarchy between processes as they launch one another.
+
+What is a benefit of multithreading?
+
+  Multithreading allows a single CPU core to execute multiple threads at once, thereby improving system utilization and responsiveness by more efficiently splitting up tasks.
+  By separating tasks across multiples threads, multithreading allows computer systems to usually complete tasks more quickly due to the more efficient prioritization of targeted jobs.
+
+What is the difference between kernel and user threads?
+
+  Kernel threads are constructed through system calls to the kernel while user threads are constructed using local function calls.
+  Kernel threads are threads created in kernel space using kernel code and libraries through a system call. The kernel is fully aware of these threads and can properly manage them.
+  User threads are threads created in user space using local code and function calls. The kernel is not aware of these threads and cannot directly control them.
+
+What is the difference between a computer program and a process?
+
+  A computer program is a collection of instructions stored on the disk while a process is an abstraction used to represent the a program while it is executing.
+  A computer program is a static collection of code while a process is a dynamic data structure containing relevant operating system information for a running program.
+
+What is preemption?
+
+  When a process is temporarily interrupted by an external scheduler to prioritize a more important task.
+  Preemption is the interruption of a process that occurs when the scheduler decides that another process needs to be run instead.
+
+What is the purpose of the process control block?
+
+  For the operating system to identify and control the process.
+  Each process is initialized with a process control block that is required by the operating system to be able to identify and control the process.
+
+How does an operating system attempt to best take advantage of limited computing resources?
+
+  Context switching between ready and blocked processes on the CPU core.
+  Context switching allows CPU cores to alternate between ready and blocked processes to best take advantage of limited computing resources.
+
+What is a thread?
+
+  A thread represents the sequence of programmed instructions that are actively being executed.
+  Threads are the programmed instructions within a process that are actively being executed. They share resources which allows for faster communication
+  and context switching as well as requiring fewer system resources when compared to processes
+
+When is a process blocked?
+
+  When the process has to wait for a contested, limited, or slow resource, such as accessing a specific file or waiting for a network request.
+  A process is blocked any time it has to wait for a separate resource outside of its control.
+
+Within memory, the layout of a process has four distinct sections: A text section for the compiled code, a data section for initialized variables, a stack for local variables, and ___.
+
+  ...a heap for dynamic memory allocation
+  The layout of a process contains the compiled code of the program, the initialized variables, the stack of local variables, and the dynamic memory heap.
