@@ -11,15 +11,18 @@ features = dataset.iloc[:,0:6]
 #choose the final column for prediction
 labels = dataset.iloc[:,-1]
 
-#one-hot encoding for categorical variables
+#one-hot encoding for categorical variables (i.e. convert our categorical features (“region”) into numerical vals)
 features = pd.get_dummies(features)
+
 #split the data into training and test data
 features_train, features_test, labels_train, labels_test = train_test_split(features, labels, test_size=0.33, random_state=42)
 
 #normalize the numeric columns using ColumnTransformer
 ct = ColumnTransformer([('normalize', Normalizer(), ['age', 'bmi', 'children'])], remainder='passthrough')
+
 #fit the normalizer to the training data and convert from numpy arrays to pandas frame
 features_train_norm = ct.fit_transform(features_train)
+
 #applied the trained normalizer on the test data and convert from numpy arrays to pandas frame
 features_test_norm = ct.transform(features_test)
 
