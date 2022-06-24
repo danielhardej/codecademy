@@ -4,6 +4,7 @@
 # This model can have only one input tensor and only one output tensor.
 
 import pandas as pd
+import tensorflow
 from sklearn.model_selection import train_test_split
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import StandardScaler
@@ -12,21 +13,21 @@ from tensorflow.keras.layers import InputLayer
 from tensorflow.keras.layers import Dense
 from tensorflow.keras.optimizers import Adam
 
+tensorflow.random.set_seed(35) #for the reproducibility of results
 
 def design_model(features):
   model = Sequential(name = "my_first_model")
+  #without hard-coding
   input = InputLayer(input_shape=(features.shape[1],))
-   #add an input layer
+  #add the input layer
   model.add(input)
   #add a hidden layer with 128 neurons
   model.add(Dense(128, activation='relu'))
-  #add an output layer
+  #add an output layer to our model
   model.add(Dense(1))
-  # create an instance of Adam optimizer with 0.01 learning rate
-  opt = Adam(learning_rate=0.01)
+  opt = Adam(learning_rate=0.1)
   model.compile(loss='mse',  metrics=['mae'], optimizer=opt)
   return model
-
 
 dataset = pd.read_csv('insurance.csv') #load the dataset
 features = dataset.iloc[:,0:6] #choose first 7 columns as features
@@ -43,3 +44,11 @@ features_test = ct.transform(features_test)
 #invoke the function for our model design
 model = design_model(features_train)
 print(model.summary())
+
+#fit the model using 40 epochs and batch size 1
+model.fit(features_train, labels_train, epochs=40, batch_size=1, verbose=1)
+
+#evaluate the model on the test data
+val_mse, val_mae = model.evaluate(features_test, labels_test, verbose=0)
+
+print("MAE: ", val_mae)
