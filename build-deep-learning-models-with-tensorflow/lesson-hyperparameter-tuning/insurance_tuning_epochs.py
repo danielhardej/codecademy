@@ -1,3 +1,10 @@
+# The number of epochs is a hyperparameter representing the number of complete passes
+# through the training dataset. This is typically a large number (100, 1000, or larger).
+# If the data is split into batches, in one epoch the optimizer will see all the batches.
+#
+# How do you choose the number of epochs? Too many epochs can lead to overfitting,
+# and too few to underfitting. One trick is to use early stopping...
+
 from model import features_train, labels_train, design_model
 import matplotlib.pyplot as plt
 from tensorflow.keras.callbacks import EarlyStopping
@@ -7,8 +14,8 @@ def fit_model(f_train, l_train, learning_rate, num_epochs):
     #in order to introduce some overfitting
     model = design_model(features_train, learning_rate)
     #train the model on the training data
-    #your code here
-    history = model.fit(features_train, labels_train, epochs=num_epochs, batch_size= 16, verbose=0, validation_split = 0.2, callbacks = [])
+    es = EarlyStopping(monitor='val_loss', mode='min', verbose=1, patience=20)
+    history = model.fit(features_train, labels_train, epochs=num_epochs, batch_size= 16, verbose=0, validation_split = 0.2, callbacks = [es])
     return history
 
 
@@ -38,4 +45,4 @@ print("Final training MAE:", history.history['mae'][-1])
 print("Final validation MAE:", history.history['val_mae'][-1])
 
 plt.savefig('static/images/my_plot.png')
-import app #don't worry about this. This is to show you the plot in the browser.
+import app
