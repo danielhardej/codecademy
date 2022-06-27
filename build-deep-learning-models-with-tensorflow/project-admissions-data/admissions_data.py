@@ -53,14 +53,34 @@ my_model.add(Dense(1))
 
 opt = Adam(learning_rate=L_RATE)
 my_model.compile(loss='mse', metrics='mae', optimizer=opt)
-my_model.fit(features_train_scaled, labels_train, epochs=N_EPOCHS, batch_size=BATCH_SIZE, verbose=1)
+h1 = my_model.fit(features_train_scaled, labels_train, epochs=N_EPOCHS, batch_size=BATCH_SIZE, verbose=1, validation_split= 0.2)
 
 res_mse, res_mae = my_model.evaluate(features_test_scaled, labels_test, verbose=0)
+predicted_values = my_model.predict(features_test_scaled)
 
+print(r2_score(labels_test, predicted_values))
 print("Final loss (RMSE): "  +  str(res_mse))
 print("MAE: " + str(res_mae))
+print(h1.history.keys())
 
-# Do extensions code below
-# if you decide to do the Matplotlib extension, you must save your plot in the directory by uncommenting the line of code below
 
-# fig.savefig('static/images/my_plots.png')
+fig = plt.figure()
+ax1 = fig.add_subplot(2, 1, 1)
+ax1.plot(h1.history['mae'])
+ax1.plot(h1.history['val_mae'])
+ax1.set_title('model mae')
+ax1.set_ylabel('MAE')
+ax1.set_xlabel('epoch')
+ax1.legend(['train', 'validation'], loc='upper left')
+
+  # Plot loss and val_loss over each epoch
+ax2 = fig.add_subplot(2, 1, 2)
+ax2.plot(h1.history['loss'])
+ax2.plot(h1.history['val_loss'])
+ax2.set_title('model loss')
+ax2.set_ylabel('loss')
+ax2.set_xlabel('epoch')
+ax2.legend(['train', 'validation'], loc='upper left')
+
+fig.tight_layout()
+fig.savefig('static/images/my_plots.png')
