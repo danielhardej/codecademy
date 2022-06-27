@@ -44,13 +44,12 @@ features_train_scaled = ct.fit_transform(features_train)
 features_test_scaled = ct.transform(features_test)
 
 ### Building the model ###
-my_model = tf.keras.models.Sequential()
+my_model = Sequential()
 input = InputLayer(input_shape=(features.shape[1],))
 my_model.add(input)
 for l in range(N_LAYERS):
   my_model.add(Dense(N_NEURONS, activation='relu'))
 my_model.add(Dense(1))
-#print(my_model.summary())
 
 opt = Adam(learning_rate=L_RATE)
 my_model.compile(loss='mse', metrics='mae', optimizer=opt)
@@ -72,6 +71,7 @@ print("R2 score: " + str(r2score))
 print("Final loss (RMSE): "  +  str(res_mse))
 print("MAE: " + str(res_mae))
 # print(h1.history.keys())
+print(my_model.summary())
 
 
 fig = plt.figure()
