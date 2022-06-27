@@ -21,11 +21,12 @@ from sklearn.metrics import r2_score
 tf.random.set_seed(42)
 
 ### Set Hyperparameters ###
-N_LAYERS = 3
+N_LAYERS = 1
 N_NEURONS = 64
 BATCH_SIZE = 1
-N_EPOCHS = 50
+N_EPOCHS = 100
 L_RATE=0.01
+VAL_SPLT=0.2
 
 ### Data loading and observing ###
 dataset = pd.read_csv('admissions_data.csv')
@@ -53,15 +54,24 @@ my_model.add(Dense(1))
 
 opt = Adam(learning_rate=L_RATE)
 my_model.compile(loss='mse', metrics='mae', optimizer=opt)
-h1 = my_model.fit(features_train_scaled, labels_train, epochs=N_EPOCHS, batch_size=BATCH_SIZE, verbose=1, validation_split= 0.2)
+h1 = my_model.fit(features_train_scaled, labels_train, epochs=N_EPOCHS, batch_size=BATCH_SIZE, verbose=1, validation_split=VAL_SPLT)
 
 res_mse, res_mae = my_model.evaluate(features_test_scaled, labels_test, verbose=0)
 predicted_values = my_model.predict(features_test_scaled)
+r2score = r2_score(labels_test, predicted_values)
 
-print(r2_score(labels_test, predicted_values))
+print()
+print("Summary: ")
+print("Number of layers: " + str(N_LAYERS))
+print("Number of neurons: " + str(N_NEURONS))
+print("Batch size: "  + str(BATCH_SIZE))
+print("Number of epochs: " + str(N_EPOCHS))
+print("Learning rate: " + str(L_RATE))
+print("Validation split: " + str(VAL_SPLT))
+print("R2 score: " + str(r2score))
 print("Final loss (RMSE): "  +  str(res_mse))
 print("MAE: " + str(res_mae))
-print(h1.history.keys())
+# print(h1.history.keys())
 
 
 fig = plt.figure()
