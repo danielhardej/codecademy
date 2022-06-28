@@ -16,18 +16,18 @@ from tensorflow.keras.optimizers import Adam
 tensorflow.random.set_seed(35) #for the reproducibility of results
 
 def design_model(features):
-  model = Sequential(name = "my_first_model")
-  #without hard-coding
-  input = InputLayer(input_shape=(features.shape[1],))
-  #add the input layer
-  model.add(input)
-  #add a hidden layer with 128 neurons
-  model.add(Dense(128, activation='relu'))
-  #add an output layer to our model
-  model.add(Dense(1))
-  opt = Adam(learning_rate=0.1)
-  model.compile(loss='mse',  metrics=['mae'], optimizer=opt)
-  return model
+    model = Sequential(name = "my_first_model")
+    #without hard-coding
+    input = InputLayer(input_shape=(features.shape[1],))
+    #add the input layer
+    model.add(input)
+    #add a hidden layer with 128 neurons
+    model.add(Dense(128, activation='relu'))
+    #add an output layer to our model
+    model.add(Dense(1))
+    opt = Adam(learning_rate=0.1)
+    model.compile(loss='mse',  metrics=['mae'], optimizer=opt)
+    return model
 
 dataset = pd.read_csv('insurance.csv') #load the dataset
 features = dataset.iloc[:,0:6] #choose first 7 columns as features
