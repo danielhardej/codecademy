@@ -1,7 +1,7 @@
 # lesson on multi-class classification using air quality data
 #
 # in the dataset, amounts of the following partiiculates and pollutants and quanitified:
-# 'PM2.5', 'PM10', 'NO', 'NO2', 'NOx', 'NH3', 'CO', 'SO2', 'O3', 'Benzene', 'Toluene', 'Xylene', 'AQI'
+# PM2.5, PM10, NO, NO2, NOx, NH3, CO, SO2, O3,Benzene, Toluene, Xylene, AQI
 # these are treated as the features in the training and test sets
 #
 # air quality is then classified as one of the following:
