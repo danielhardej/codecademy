@@ -25,7 +25,7 @@ import tensorflow
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import  InputLayer
 from tensorflow.keras.layers import  Dense
-#your code here
+
 
 train_data = pd.read_csv("air_quality_train.csv")
 test_data = pd.read_csv("air_quality_test.csv")
