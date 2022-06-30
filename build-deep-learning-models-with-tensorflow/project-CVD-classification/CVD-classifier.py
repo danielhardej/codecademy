@@ -26,7 +26,6 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, InputLayer
 from tensorflow.keras.optimizers import Adam
 from sklearn.metrics import classification_report
-from sklearn.metrics import r2_score
 from tensorflow.keras.utils import to_categorical
 import numpy as np
 
