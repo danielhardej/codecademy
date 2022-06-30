@@ -1,8 +1,10 @@
+#### What can we use if we want to generate more image data without collecting any new images?
 
+We can use data augmentation.
 
 #### Complete the command below to create a convolutional neural network layer with 5 filters, each with size 3x3, that uses a ReLU activation function.
 
-##### model.add(tf.keras.layers.Conv2D(5, 3,activation="relu"))
+ model.add(tf.keras.layers.Conv2D(5, 3,activation="relu"))
 
 
 #### Fill in the code below to create a Dense layer with 16 hidden units and uses a rectified linear unit.
