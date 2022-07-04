@@ -17,9 +17,7 @@ from sklearn.metrics import classification_report, confusion_matrix
 
 ### Set hyperparams ###
 NUM_EPOCHS = 20
-BATCH_SIZE = 8
 LEARN_RATE = 0.01
-
 CLASS_MODE = "categorical"
 COLOR_MODE = "grayscale"
 TARGET_SIZE = (256,256)
