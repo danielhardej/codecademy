@@ -32,12 +32,12 @@ import pandas as pd
 import tensorflow as tf
 import matplotlib.pyplot as plt
 import numpy as np
+import os
 
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.model_selection import train_test_split
 from collections import Counter
 from sklearn.compose import ColumnTransformer
-from sklearn.metrics import classification_report
 from sklearn.metrics import classification_report, confusion_matrix
 
 from tensorflow import keras
