@@ -20,6 +20,9 @@ class HashMap:
     value = self.array[array_index]
     return value
 
+
+
+# test out the hash_map!
 hash_map = HashMap(20)
 hash_map.assign("gneiss", "metamorphic")
 print(hash_map.retrieve("gneiss"))
