@@ -114,12 +114,12 @@
       self.right = None
 
 
-- [ ] root = BinarySearchTree(25) \n
-      root.left = BinarySearchTree(14)\n
+- [ ] root = BinarySearchTree(25)
+      root.left = BinarySearchTree(14)
       root.right = BinarySearchTree(45)
 
-- [ ] root = BinarySearchTree("groot")\n
-      root.left = BinarySearchTree("word1", 2)\n
+- [ ] root = BinarySearchTree("groot")
+      root.left = BinarySearchTree("word1", 2)
       root.right = BinarySearchTree("word2", 2)
 
 - [x] root = BinarySearchTree(25)
