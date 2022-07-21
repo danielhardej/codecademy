@@ -88,7 +88,7 @@
         return None
 
 
-The BinarySearchTree instance containing the value 40
+- [ ] The BinarySearchTree instance containing the value 40
 - [ ] False
 - [x] None
 
@@ -114,12 +114,12 @@ The BinarySearchTree instance containing the value 40
       self.right = None
 
 
-- [ ] root = BinarySearchTree(25)
-      root.left = BinarySearchTree(14)
+- [ ] root = BinarySearchTree(25) \n
+      root.left = BinarySearchTree(14)\n
       root.right = BinarySearchTree(45)
 
-- [ ] root = BinarySearchTree("groot")
-      root.left = BinarySearchTree("word1", 2)
+- [ ] root = BinarySearchTree("groot")\n
+      root.left = BinarySearchTree("word1", 2)\n
       root.right = BinarySearchTree("word2", 2)
 
 - [x] root = BinarySearchTree(25)
