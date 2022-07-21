@@ -22,7 +22,7 @@
 
 ##### The .get_node_by_value() method code is provided in the code block, for reference.
 
- '''def get_node_by_value(self, value):
+    def get_node_by_value(self, value):
       if (self.value == value):
         return self
       elif ((self.left is not None) and (value < self.value)):
@@ -30,7 +30,7 @@
       elif (self.right is not None):
         return self.right.get_node_by_value(value)
       else:
-        return None'''
+        return None
 
 - [ ] None
 - [x] The BinarySearchTree instance containing the value 34.
@@ -47,7 +47,7 @@
 
 
 #### Fill in the code below to correctly implement the .insert() method.
-    '''
+
     def insert(self, value):
       if (value < self.value):
         if (self.left is None):
@@ -59,7 +59,7 @@
           self.right = BinarySearchTree(value, self.depth + 1)
         else:
           self.right.insert(value)
-          '''
+
 
 #### What is the time complexity for .insert() and .get_node_by_value() performed on an average, relatively balanced, Binary Search Tree with N nodes?
 
@@ -76,7 +76,7 @@
     22  34   89
 
 ##### The .get_node_by_value() method code is provided in the code block, for reference.
-    '''
+
     def get_node_by_value(self, value):
       if (self.value == value):
         return self
@@ -86,14 +86,14 @@
         return self.right.get_node_by_value(value)
       else:
         return None
-      '''
+
 
 The BinarySearchTree instance containing the value 40
 - [ ] False
 - [x] None
 
 #### Fill in .get_node_by_value() so that it searches the BinarySearchTree and correctly returns either a BinarySearchTree instance with matching data or None.
-    '''
+
     def get_node_by_value(self, value):
       if (self.value == value):
         return self
@@ -103,16 +103,16 @@ The BinarySearchTree instance containing the value 40
         return self.right.get_node_by_value(value)
       else:
         return None
-      '''
+
 
 #### Based on the constructor we implemented, which is a correct way of instantiating a Binary Search Tree node?
-    '''
+
     def __init__(self, value, depth=1):
       self.value = value
       self.depth = depth
       self.left = None
       self.right = None
-      '''
+
 
 - [ ] root = BinarySearchTree(25)
       root.left = BinarySearchTree(14)
@@ -131,7 +131,7 @@ The BinarySearchTree instance containing the value 40
       root.right = BinarySearchTree(45, root.depth)
 
 #### True or False: The following code will correctly insert a value into a tree.
-    '''
+
     def insert(self, value):
       if (value < self.value):
         if (self.left is None):
@@ -144,18 +144,16 @@ The BinarySearchTree instance containing the value 40
         else:
           self.right = BinarySearchTree(value, self.depth + 1)
 
-      '''
 
 - [x] False
 - [ ] True
 
 #### Fill in the .depth_first_traversal() method such that it prints an in-order traversal of a Binary Search Tree.
 
-    '''
+
     def depth_first_traversal(self):
       if (self.left is not None):
         self.left.depth_first_traversal()
       print(f'Depth={self.depth}, Value={self.value}')
       if (self.right is not None):
         self.right.depth_first_traversal()
-    '''
