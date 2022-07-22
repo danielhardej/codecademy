@@ -13,7 +13,6 @@ class MaxHeap:
 
   def right_child_idx(self, idx):
     return idx * 2 + 1
-
   # END OF HEAP HELPER METHODS
 
   def add(self, element):
