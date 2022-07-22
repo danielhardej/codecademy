@@ -30,7 +30,7 @@ class MaxHeap:
       child = self.heap_list[idx]
       parent = self.heap_list[self.parent_idx(idx)]
       if parent < child:
-        print("Swapping {parent_element} with {element_at_index}".format(parent, child))
+        print("Swapping {} with {}".format(parent, child))
         self.heap_list[idx] = parent
         self.heap_list[self.parent_idx(idx)] = child
       idx = self.parent_idx(idx)
