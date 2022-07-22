@@ -1,7 +1,7 @@
 # import random number generator
 from random import randrange
 # import heap class
-from max_heap import MaxHeap
+from MaxHeap import MaxHeap
 
 # make an instance of MaxHeap
 max_heap = MaxHeap()

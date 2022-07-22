@@ -1,11 +1,10 @@
-from max_heap import MaxHeap
+from MaxHeap import MaxHeap
 
 def heapsort(lst):
   sort = []
   max_heap = MaxHeap()
   for idx in lst:
     max_heap.add(idx)
-  # add code below
   while max_heap.count > 0:
     max_value = max_heap.retrieve_max()
     sort.insert(0, max_value)
