@@ -1,5 +1,6 @@
 import random
 from random import randrange
+from math import inf
 from Graph import Graph
 from Vertex import Vertex
 
@@ -17,7 +18,7 @@ def print_graph(graph):
 def build_tsp_graph(directed):
   g = Graph(directed)
   vertices = []
-  for val in ['a', 'b', 'c', 'd', 'e', 'f']:
+  for val in ['a', 'b', 'c', 'd']:
     vertex = Vertex(val)
     vertices.append(vertex)
     g.add_vertex(vertex)
@@ -34,14 +35,27 @@ def build_tsp_graph(directed):
   g.add_edge(vertices[3], vertices[0], 5)
   g.add_edge(vertices[3], vertices[1], 6)
   g.add_edge(vertices[3], vertices[2], 1)
-  g.add_edge(vertices[4], vertices[0], 3)
-  g.add_edge(vertices[4], vertices[2], 1)
-  g.add_edge(vertices[4], vertices[3], 1)
-  g.add_edge(vertices[5], vertices[0], 3)
-  g.add_edge(vertices[5], vertices[1], 2)
-  g.add_edge(vertices[5], vertices[4], 4)
 
   return g
+
+def build_graph(directed):
+    
+  g = Graph(directed)
+  vertices = []
+  for val in ['a', 'b', 'c', 'd', 'e', 'f', 'g']:
+    vertex = Vertex(val)
+    vertices.append(vertex)
+    g.add_vertex(vertex)
+
+  for v in range(len(vertices)):
+    v_idx = randrange(0, len(vertices) - 1)
+    v1 = vertices[v_idx]
+    v_idx = randrange(0, len(vertices) - 1)
+    v2 = vertices[v_idx]
+    g.add_edge(v1, v2, randrange(1, 10))
+
+  return g
+
 
 def visited_all_nodes(visited_vertices):
   for vertex in visited_vertices:
@@ -94,7 +108,7 @@ print_graph(graph)
 n_attempts = 100
 path_count = {}
 shortest_path = ""
-shortest_path_len = 10000
+shortest_path_len = inf
 
 for n in range(n_attempts):
   current_path = traveling_salesman(graph)
