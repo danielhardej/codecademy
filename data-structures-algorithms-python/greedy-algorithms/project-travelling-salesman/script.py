@@ -39,7 +39,7 @@ def build_tsp_graph(directed):
   return g
 
 def build_graph(directed):
-    
+
   g = Graph(directed)
   vertices = []
   for val in ['a', 'b', 'c', 'd', 'e', 'f', 'g']:
