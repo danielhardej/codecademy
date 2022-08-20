@@ -39,8 +39,6 @@ print("Train score:")
 print(mlr.score(x_train, y_train))
 print("Test score:")
 print(mlr.score(x_test, y_test))
-# print("Accuracy score:")
-# print(accuracy_score(y_test, y_pred))
 
 ## Residual Analysis
 residuals = y_predict - y_test
