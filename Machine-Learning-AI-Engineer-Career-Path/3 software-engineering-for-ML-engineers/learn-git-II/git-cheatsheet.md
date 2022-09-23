@@ -45,6 +45,10 @@ Switches from one branch to another.
 
 Used to join file changes from one branch to another.
 
+    git merge origin/master
+
+Merges origin/master into your local branch.
+
 ### Git Push
 
     git push origin <your_branch_name>
@@ -53,7 +57,7 @@ This command will push your branch up to the remote, origin. From there, collabo
 
 ### Git Clone
 
-    git clone
+    git clone <remote_location> <clone_name>
 
 Creates a local copy of a remote.
 
@@ -68,9 +72,3 @@ Lists the remote repositories of a Git project.
     git fetch
 
 Fetches work from the remote into the local copy.
-
-#### Git Merge
-
-    git merge origin/master
-
-Merges origin/master into your local branch.
