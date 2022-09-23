@@ -19,6 +19,47 @@ We also learned the following commands
 
 ## Git Commands
 
+### Inizialize a Repository
+
+    git init
+
+Creates a new Git repository from the current working directory.
+
+### Status
+
+    git status
+
+Inspects the contents of the working directory and staging area.
+
+### Git Add
+
+    git add
+
+Adds files from the working directory to the staging area
+
+### Git Diff
+
+    git diff
+shows the difference between the working directory and the staging area
+
+    git commit
+permanently stores file changes from the staging area in the repository
+
+    git log
+shows a list of all previous commits
+
+    git checkout HEAD filename
+Discards changes in the working directory.
+
+    git reset HEAD <filename>
+Unstages file changes in the staging area.
+
+    git reset <commit_SHA>
+Resets to a previous commit in your commit history.
+
+What is the difference between **checkout** and **reset** in Git?
+https://discuss.codecademy.com/t/what-is-the-difference-between-checkout-and-reset/405720
+
 ### Git Branch
 
     git branch
