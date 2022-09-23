@@ -25,23 +25,23 @@ We also learned the following commands
 
 Lists all a Git project’s branches.
 
-    git branch branch_name
+    git branch <branch_name>
 
 Creates a new branch.
 
-    git branch -d branch_name
+    git branch -d <branch_name>
 
 Deletes the branch specified.
 
 ### Git Checkout
 
-    git checkout branch_name
+    git checkout <branch_name>
 
 Switches from one branch to another.
 
 ### Git Merge
 
-    git merge branch_name
+    git merge <branch_name>
 
 Used to join file changes from one branch to another.
 
