@@ -35,30 +35,49 @@ Inspects the contents of the working directory and staging area.
 
     git add
 
-Adds files from the working directory to the staging area
+Adds files from the working directory to the staging area.
 
 ### Git Diff
 
     git diff
-shows the difference between the working directory and the staging area
+
+Shows the difference between the working directory and the staging area.
+
+### Git Commit
 
     git commit
-permanently stores file changes from the staging area in the repository
+
+Permanently stores file changes from the staging area in the repository.
+
+### Git Log
 
     git log
-shows a list of all previous commits
 
-    git checkout HEAD filename
-Discards changes in the working directory.
+Shows you a list of all the previous commits in the current repository.
+
+### Git Checkout
+
+    git checkout HEAD <filename>
+
+Discards the changes made in the current working directory.
+
+    git checkout <branch_name>
+
+Switches from one branch to another.
+
+
+### Git Reset
 
     git reset HEAD <filename>
+
 Unstages file changes in the staging area.
 
     git reset <commit_SHA>
+
 Resets to a previous commit in your commit history.
 
-What is the difference between **checkout** and **reset** in Git?
-https://discuss.codecademy.com/t/what-is-the-difference-between-checkout-and-reset/405720
+> What is the difference between **checkout** and **reset** in Git?
+> https://discuss.codecademy.com/t/what-is-the-difference-between-checkout-and-reset/405720
 
 ### Git Branch
 
@@ -73,12 +92,6 @@ Creates a new branch.
     git branch -d <branch_name>
 
 Deletes the branch specified.
-
-### Git Checkout
-
-    git checkout <branch_name>
-
-Switches from one branch to another.
 
 ### Git Merge
 
