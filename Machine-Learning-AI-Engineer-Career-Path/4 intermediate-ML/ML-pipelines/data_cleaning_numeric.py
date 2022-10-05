@@ -13,6 +13,16 @@ from sklearn.pipeline import Pipeline
 from sklearn.impute import SimpleImputer
 from sklearn.metrics import accuracy_score
 
+# function to calculate the sum of absolute differences of two arrays
+def get_sum_abs_diffs(arr1, arr2):
+  diffs = []
+  if len(arr1) == len(arr2):
+    for i in range(len(arr1)):
+      diffs.append(arr1[i] - arr2[i])
+  else:
+    pass
+  return sum(diffs)
+
 columns = ["sex","length","diam","height","whole","shucked","viscera","shell","age"]
 
 df = pd.read_csv("http://archive.ics.uci.edu/ml/machine-learning-databases/abalone/abalone.data",names=columns)
@@ -20,9 +30,9 @@ df = pd.read_csv("http://archive.ics.uci.edu/ml/machine-learning-databases/abalo
 y = df.age
 X=df.drop(columns=['age'])
 
-print(y.dtypes)
-print("---")
-print(X.dtypes)
+# print(y.dtypes)
+# print("---")
+# print(X.dtypes)
 
 num_cols = X.select_dtypes(include=np.number).columns
 cat_cols = X.select_dtypes(include=['object']).columns
@@ -48,20 +58,23 @@ x_train_fill_missing_scale = scale.transform(x_train_fill_missing)
 x_test_fill_missing = x_test[num_cols].fillna(x_train_num.mean())
 x_test_fill_missing_scale = scale.transform(x_test_fill_missing)
 
+x_test_num = x_test[num_cols]
+
 #1. Rewrite using Pipelines!
-pipe = Pipeline([("imputer", SimpleImputer(missing_values=np.nan)), ("scale", StandardScaler(with_mean=False))])
+pipe = Pipeline([("imputer",SimpleImputer(strategy='mean')), ("scale",StandardScaler())])
 
 #2. Fit pipeline on the test and compare results
-pipe.fit(x_train, y_train)
-y_pred_mean = pipe.predict(x_test)
-mean_accuracy = accuracy_score(y_test, y_pred_mean)
+pipe.fit(x_train_num)
+x_test_transformed = pipe.transform(x_test_num)
+# print(x_test_transformed)
+
+sum_abs_diff_mean = get_sum_abs_diffs(x_test_transformed, x_test_fill_missing_scale)
+print(sum_abs_diff_mean)   # should be zero!
 
 #3. Change imputer strategy to median and compare results
-pipe_2 = Pipeline([("imputer", SimpleImputer(missing_values=np.nan, strategy='median')), ("scale", StandardScaler(with_mean=False))])
+pipe_median = Pipeline([("imputer", SimpleImputer(strategy='median')), ("scale", StandardScaler())])
+pipe_median.fit(x_train_num)
+x_test_transformed_median = pipe_median.transform(x_test_num)
 
-pipe_2.fit(x_train, y_train)
-y_pred_med = pipe_2.predict(x_test)
-med_accuracy = accuracy_score(y_test, y_pred_med)
-
-print("Pipeline accuracy with mean impute strategy: {0}".format(mean_accuracy))
-print("Pipeline accuracy with median impute strategy: {0}".format(med_accuracy))
+sum_abs_diff_median = get_sum_abs_diffs(x_test_transformed_median, x_test_fill_missing_scale)
+print(sum_abs_diff_median)    # should be more than zero!
