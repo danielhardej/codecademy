@@ -28,7 +28,7 @@ columns = ["sex","length","diam","height","whole","shucked","viscera","shell","a
 df = pd.read_csv("http://archive.ics.uci.edu/ml/machine-learning-databases/abalone/abalone.data",names=columns)
 
 y = df.age
-X=df.drop(columns=['age'])
+X = df.drop(columns=['age'])
 
 # print(y.dtypes)
 # print("---")
