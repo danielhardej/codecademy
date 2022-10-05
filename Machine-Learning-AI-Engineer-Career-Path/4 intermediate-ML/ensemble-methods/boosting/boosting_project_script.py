@@ -86,7 +86,7 @@ print("GradBoost Classifier accuracy: {0}  F1: {1}".format(grad_acc, grad_f1))
 # ada_gs_clf.fit(x_train, y_train)
 # print(ada_gs_clf.best_estimator_)
 
-abc = AdaBoostClassifier(base_estimator=decision_stump)
+abc = AdaBoostClassifier()
 parameters = {'n_estimators':[10,50,100,150,200,250,300]}
 clf = GridSearchCV(abc, parameters,verbose=1,scoring='f1' ,n_jobs=-1)
 clf.fit(x_train, y_train)
