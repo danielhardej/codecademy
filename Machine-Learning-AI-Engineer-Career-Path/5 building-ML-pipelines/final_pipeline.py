@@ -13,10 +13,10 @@ from sklearn.impute import SimpleImputer
 from sklearn import metrics
 
 columns = ["sex","length","diam","height","whole","shucked","viscera","shell","age"]
-df = pd.read_csv("http://archive.ics.uci.edu/ml/machine-learning-databases/abalone/abalone.data",names=columns)
+df = pd.read_csv("http://archive.ics.uci.edu/ml/machine-learning-databases/abalone/abalone.data", names=columns)
 
 y = df.age
-X=df.drop(columns=['age'])
+X = df.drop(columns=['age'])
 num_cols = X.select_dtypes(include=np.number).columns
 cat_cols = X.select_dtypes(include=['object']).columns
 #create some missing values
