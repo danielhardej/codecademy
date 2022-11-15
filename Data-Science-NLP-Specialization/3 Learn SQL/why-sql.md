@@ -64,4 +64,4 @@
     ORDER BY 2 DESC;
 
 #### Output:
-![](images/Screen Shot 2022-11-15 at 3.55.07 PM.png)
+![](images/Screenshot.png)
