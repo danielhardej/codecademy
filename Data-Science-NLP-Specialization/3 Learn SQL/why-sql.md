@@ -7,7 +7,7 @@
     LIMIT 10;
 
 #### Output:
-![](imaes/select_cols.png)
+![](images/select_cols.png)
 
 #### This codes combines data from three different tables:
 
