@@ -7,7 +7,7 @@
     LIMIT 10;
 
 #### Output:
-![]()
+![](imaes/select_cols.png)
 
 #### This codes combines data from three different tables:
 
@@ -32,7 +32,7 @@
      ON c.user_id = p.user_id;
 
 #### Output:
-![]()
+![](images/user_funnel.png)
 
 ### The following code runs a churn rate analysis, which is the percent of subscribers to a service who have canceled their subscription.
 
@@ -53,7 +53,7 @@
       );
 
 #### Output:
-![]()
+![](images/churn_rate.png)
 
 ### This code shows us how many visits come from each utm_source.
 
@@ -64,4 +64,4 @@
     ORDER BY 2 DESC;
 
 #### Output:
-![](images/Screenshot.png)
+![](images/utm_source.png)
