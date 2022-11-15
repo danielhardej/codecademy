@@ -9,7 +9,7 @@
 #### Output:
 ![](images/select_cols.png)
 
-#### This codes combines data from three different tables:
+### This codes combines data from three different tables:
 
  - ```browse``` - gives the timestamps of users who visited different item description pages
  - ```checkout``` - gives the timestamps of users who visited the checkout page
