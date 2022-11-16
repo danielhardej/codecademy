@@ -1,4 +1,5 @@
 # Exploring Data with SQL
+## Code examples
 
 ### This code will select all (*) columns from browse for the first 10 records.
 
