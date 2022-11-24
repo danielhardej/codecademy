@@ -1,0 +1,61 @@
+
+/* */
+
+SELECT *
+FROM orders
+LIMIT 5;
+
+SELECT *
+FROM subscriptions
+LIMIT 5;
+
+SELECT *
+FROM customers
+LIMIT 5;
+
+
+/* Combining Tables Manually */
+
+
+
+/* Combining Tables with SQL */
+
+SELECT *
+FROM orders
+JOIN subscriptions
+  ON orders.subscription_id = subscriptions.subscription_id;
+
+SELECT *
+FROM orders
+JOIN subscriptions
+  ON orders.subscription_id = subscriptions.subscription_id
+WHERE description = 'Fashion Magazine';
+
+
+/* Inner Joins */
+
+SELECT COUNT(*)
+FROM newspaper;
+
+SELECT COUNT(*)
+FROM online;
+
+SELECT COUNT(*)
+FROM newspaper
+JOIN online
+  ON newspaper.id = online.id;
+
+/* Left Joins */
+
+SELECT *
+FROM newspaper
+LEFT JOIN online
+  ON newspaper.id = online.id;
+
+SELECT *
+FROM newspaper
+LEFT JOIN online
+  ON newspaper.id = online.id
+WHERE online.id IS NULL;
+
+/* */
