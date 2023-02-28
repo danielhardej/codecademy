@@ -41,8 +41,8 @@ public String createNewSuperHero(@RequestParam String firstName, @RequestParam S
 @PostMapping(path="/help")
 public String postHelp(@RequestParam String postalCode, @RequestParam String streetAddress) {
      SuperReport newSuperReport = new SuperReport(postalCode, streetAddress, "");
-  superReportRepository.save(newSuperReport);
-  return "Thanks! Super Heroes have been dispatched to your location!";
+     superReportRepository.save(newSuperReport);
+     return "Thanks! Super Heroes have been dispatched to your location!";
   }
 
 @GetMapping(path="/heroReport")
