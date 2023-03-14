@@ -33,3 +33,43 @@ click_source_by_month_pivot = click_source_by_month.pivot(
 ).reset_index()
 
 print(click_source_by_month_pivot)
+
+
+# ----------------------------------------------------
+
+import codecademylib3
+import pandas as pd
+
+ad_clicks = pd.read_csv('ad_clicks.csv')
+
+
+clicks_by_utm = ad_clicks.groupby('utm_source').user_id.count().reset_index()
+print(clicks_by_utm)
+
+ad_clicks['is_click'] = ~ad_clicks.ad_click_timestamp.isnull()
+print(ad_clicks.head(10))
+
+clicks_by_source = ad_clicks.groupby(['utm_source', 'is_click']).user_id.count().reset_index()
+print(clicks_by_source)
+
+clicks_pivot = clicks_by_source.pivot(
+  index='utm_source',
+  columns='is_click',
+  values='user_id'
+).reset_index()
+clicks_pivot['percent_clicked'] = clicks_pivot[True] / (clicks_pivot[True] + clicks_pivot[False])
+print(clicks_pivot)
+
+# The column experimental_group tells us whether the user was shown Ad A or Ad B.
+# Were approximately the same number of people shown both adds?
+print(ad_clicks.groupby('experimental_group').user_id.count().reset_index())
+a_clicks = ad_clicks[ad_clicks.experimental_group == 'A']
+b_clicks = ad_clicks[ad_clicks.experimental_group == 'B']
+
+
+# Using the column is_click, check to see if a greater percentage of users clicked on Ad A or Ad B.
+ad_clicks.groupby(['is_click', 'experimental_group']).user_id.count().reset_index()
+
+
+a_clicks_by_day = a_clicks.groupby(['is_click', 'day']).user_id.count().reset_index()
+b_clicks_by_day = b_clicks.groupby(['is_click', 'day']).user_id.count().reset_index()
