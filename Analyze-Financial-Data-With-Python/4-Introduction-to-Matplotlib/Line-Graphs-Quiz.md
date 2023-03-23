@@ -3,7 +3,7 @@
 
 #### What is the command to create a figure with 3 rows and 2 columns, and a subplot in the second row and the first column?
 
-![](https://content.codecademy.com/courses/matplotlib/Figure_1.png)
+<img src="https://content.codecademy.com/courses/matplotlib/Figure_1.png"  width="40%" height="40%">
 
  - [x] plt.subplot(3, 2, 3)
  - [ ] plt.plot(3, 2, [2, 1])
