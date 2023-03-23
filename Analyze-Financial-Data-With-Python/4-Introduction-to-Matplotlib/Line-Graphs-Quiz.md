@@ -96,15 +96,15 @@
 
 #### What is the command to save a figure to a file called 'it_figures.png'?
 
- - [ ] plt.save_figure('it_figures', type='png')
- - [ ] plt.save('it_figures.png')
- - [x] plt.savefig('it_figures.png')
- - [ ] plt.save('it_figures', type='png')
+ - [ ] `plt.save_figure('it_figures', type='png')`
+ - [ ] `plt.save('it_figures.png')`
+ - [x] `plt.savefig('it_figures.png')`
+ - [ ] `plt.save('it_figures', type='png')`
 
 #### What is the command to set the color of a line to be 'green'?
 
- - [ ] plt.plot(x, y, line_color='green')
- - [x] plt.plot(x, y, color='green')
- - [ ] plt.color('green')
- - [ ] plt.line_color('green')
+ - [ ] `plt.plot(x, y, line_color='green')`
+ - [x] `plt.plot(x, y, color='green')`
+ - [ ] `plt.color('green')`
+ - [ ] `plt.line_color('green')`
 
