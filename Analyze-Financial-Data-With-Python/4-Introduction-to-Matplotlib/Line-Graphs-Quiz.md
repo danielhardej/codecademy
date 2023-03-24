@@ -5,10 +5,10 @@
 
 <img src="https://content.codecademy.com/courses/matplotlib/Figure_1.png"  width="40%" height="40%">
 
- - [x] plt.subplot(3, 2, 3)
- - [ ] plt.plot(3, 2, [2, 1])
- - [ ] plt.figure(3, 2, subplot=3)
- - [ ] plt.subplot(3, 2, 2)
+ - [x] `plt.subplot(3, 2, 3)`
+ - [ ] `plt.plot(3, 2, [2, 1])`
+ - [ ] `plt.figure(3, 2, subplot=3)`
+ - [ ] `plt.subplot(3, 2, 2)`
 
  #### Which line of code will set the y-axis ticks to be at 0, 1, 2, 4, and 9?
 
@@ -82,17 +82,17 @@
 
 #### What is the command to set a plot to display from x=-5 to x=5 and from y=0 to y=10?
 
- - [ ] plt.axis(-5, 0, 5, 10)
- - [ ] plt.set_axis([-5, 0, 5, 10])
- - [ ] plt.plot(x, y, axis=[-5, 5, 0, 10])
- - [x] plt.axis([-5, 5, 0, 10])
+ - [ ] `plt.axis(-5, 0, 5, 10)`
+ - [ ] `plt.set_axis([-5, 0, 5, 10])`
+ - [ ] `plt.plot(x, y, axis=[-5, 5, 0, 10])`
+ - [x] `plt.axis([-5, 5, 0, 10])`
 
 #### Which line of code will get the axes object of a plot and store it in a variable ax?
 
- - [ ] ax = plt.get_axis()
- - [ ] ax = plt.plot()
- - [ ] ax = plt.axes()
- - [x] ax = plt.subplot()
+ - [ ] `ax = plt.get_axis()`
+ - [ ] `ax = plt.plot()`
+ - [ ] `ax = plt.axes()`
+ - [x] `ax = plt.subplot()`
 
 #### What is the command to save a figure to a file called 'it_figures.png'?
 
