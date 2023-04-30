@@ -6,32 +6,12 @@
 
 `cafe_survey = pd.get_dummies(data=cafe_survey, columns = ['major'])`
 
-- [x] 
-
 | name      | major_business | major_law | major_art | cafe_frequency | food_rating | would_recommend | dormitory   |
 |-----------|----------------|-----------|-----------|----------------|-------------|-----------------|-------------|
 | Jim H.    | 1              | 0         | 0         | rarely         | 1           | neutral         | Brent Hall  |
 | Monty P.  | 0              | 0         | 1         | sometimes      | 7           | neutral         | missing     |
 | Joey B.   | 0              | 0         | 1         | rarely         | 3           | disagree        | Jacobs Hall |
 | Rachel M. | 0              | 1         | 0         | often          | 9           | strongly_agree  | Jacobs Hall |
-
-- [ ]
-
-| name      | major | cafe_frequency | food_rating | would_recommend | dormitory   |
-|-----------|-------|----------------|-------------|-----------------|-------------|
-| Jim H.    | 1     | rarely         | 1           | neutral         | Brent Hall  |
-| Monty P.  | 2     | sometimes      | 7           | neutral         | missing     |
-| Joey B.   | 2     | rarely         | 3           | disagree        | Jacobs Hall |
-| Rachel M. | 3     | often          | 9           | strongly_agree  | Jacobs Hall |
-
-- [ ]
-
-| name      | major    | cafe_frequency | food_rating | would_recommend | dormitory_BH | dormitory_missing | dormitory_JH |
-|-----------|----------|----------------|-------------|-----------------|--------------|-------------------|--------------|
-| Jim H.    | business | rarely         | 1           | neutral         | 1            | 0                 | 0            |
-| Monty P.  | art      | sometimes      | 7           | neutral         | 0            | 1                 | 0            |
-| Joey B.   | art      | rarely         | 3           | disagree        | 0            | 0                 | 1            |
-| Rachel M. | law      | often          | 9           | strongly_agree  | 0            | 0                 | 1            |
 
 
 #### Which of the variables in the following table are not Binary?
@@ -138,30 +118,6 @@ cafe_survey['cafe_frequency'] = pd.Categorical(cafe_survey['cafe_frequency'], ['
 
 #### Which of the following would be the appropriate output of calling dtypes on the Cafeteria Survey dataframe?
 
-- [ ] 
-| class pandas.core.frame.DataFrame |     |          |        |
-|-----------------------------------|-----|----------|--------|
-| RangeIndex: 250 entries, 0 to 249 |     |          |        |
-| Data columns (total 7 columns):   |     |          |        |
-| name                              | 250 | non-null | object |
-| email_address                     | 250 | non-null | object |
-| major                             | 250 | non-null | object |
-| cafe_frequency                    | 250 | non-null | object |
-| food_rating                       | 250 | non-null | int64  |
-| would_recommend                   | 250 | non-null | object |
-| dormitory                         | 250 | non-null | object |
-| dtypes: int64(1), object(6)       |     |          |        |
-| memory usage: 5.6+ KB             |     |          |        |
-
-- [ ] 
-| name      | email_address     | major    | cafe_frequency | food_rating | would_recommend | dormitory     |
-|-----------|-------------------|----------|----------------|-------------|-----------------|---------------|
-| Jim H.    | jh12@cauni.edu    | business | rarely         | 1           | neutral         | Brent Hall    |
-| Monty P.  | monty5@cauni.edu  | missing  | sometimes      | 7           | neutral         | missing       |
-| Joey B.   | leblanc@cauni.edu | art      | rarely         | 3           | disagree        | Jacobs Hall   |
-| Rachel M. | missing           | law      | often          | 9           | strongly_agree  | Franklin Hall |
-
-- [x] 
 | name            | object |
 |-----------------|--------|
 | email_address   | object |
